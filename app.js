@@ -30,12 +30,12 @@ app.post("/attendance", async (req, res) => {
 
   console.log(username,password,email,semoption)
 
-  try {
+  // try {
     var result = await runPuppeteer(username, password,semoption);
-  } catch (err) {
-    res.status(401).send({ Error: err });
-    return 0;
-  }
+  // } catch (err) {
+  //   res.status(401).send({ Error: err });
+  //   return 0;
+  // }
   // console.log("result = >",result);
   
   // const report = await display(result);
