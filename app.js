@@ -30,12 +30,12 @@ app.post("/attendance", async (req, res) => {
 
   console.log(username,password,email,semoption)
 
-  // try {
+  try {
     var result = await runPuppeteer(username, password,semoption);
-  // } catch (err) {
-  //   res.status(401).send({ Error: err });
-  //   return 0;
-  // }
+  } catch (err) {
+    res.status(401).send({ Error: err });
+    return 0;
+  }
   // console.log("result = >",result);
   
   // const report = await display(result);
@@ -44,8 +44,9 @@ app.post("/attendance", async (req, res) => {
   // await send_email(email,report)
   
   // Display the result using the display function
+  res.send({ message: "Success" });
   
-  try{
+  try {
     var report = await display(result);
   }
   catch(err){
@@ -63,7 +64,6 @@ app.post("/attendance", async (req, res) => {
     res.send({"Error" : err})
     return 0;
   }
-  res.send({ message: "Success" });
 });
 
 app.listen(port, () => {
