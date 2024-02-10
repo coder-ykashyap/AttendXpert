@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000; // Use the provided PORT or default to 3000
+const port = process.env.PORT || 443; // Use the provided PORT or default to 3000
 const runPuppeteer = require("./algorithm");
 const send_email = require("./mailer");
 const bodyParser = require("body-parser");
