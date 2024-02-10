@@ -7,11 +7,17 @@ const bodyParser = require("body-parser");
 const display = require("./display");
 const cors = require("cors");
 const decrypt = require("./decrypt")
+const path = require("path")
 
 app.use(cors());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 app.post("/attendance", async (req, res) => {
   console.log(req.body.username, req.body.password, req.body.email, req.body.option);
