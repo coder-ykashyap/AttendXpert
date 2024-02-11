@@ -23,7 +23,7 @@ const fetching = async (Obj, intnum) => {
   let bodyContent = JSON.stringify(Obj);
 
   // let response = await fetch("http://localhost:3000/attendance", {
-  let response = await fetch("http://43.204.57.66:3000/attendance", {
+  let response = await fetch("https://pcte.live/attendance", {
     // let response = await fetch("https://my-attendance-manager.onrender.com/attendance", {
     method: "POST",
     body: bodyContent,
